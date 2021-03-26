@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  yasgui:
+    image: erikap/yasgui
+    ports:
+      - 8891:80
+    environment:
+      ENABLE_ENDPOINT_SELECTOR: "true"
+      DEFAULT_SPARQL_ENDPOINT: "http://localhost:8890/sparql"
