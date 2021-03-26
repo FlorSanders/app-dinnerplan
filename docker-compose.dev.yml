@@ -8,3 +8,7 @@ services:
     environment:
       ENABLE_ENDPOINT_SELECTOR: "true"
       DEFAULT_SPARQL_ENDPOINT: "http://localhost:8890/sparql"
+  mocklogin:
+    image: kanselarij/mock-login-service:1.0.0
+    volumes:
+      - ./config/mocklogin:/config

@@ -1,16 +1,15 @@
 defmodule Dispatcher do
-  use Plug.Router
+  use Matcher
+  
+  # Define the return types the dispatcher accepts
+  define_accept_types [
+    html: [ "text/html", "application/xhtml+html" ],
+    json: [ "application/json", "application/vnd.api+json" ],
+  ]
 
-  def start(_argv) do
-    port = 80
-    IO.puts "Starting Plug with Cowboy on port #{port}"
-    Plug.Adapters.Cowboy.http __MODULE__, [], port: port
-    :timer.sleep(:infinity)
-  end
-
-  plug Plug.Logger
-  plug :match
-  plug :dispatch
+  # Define shorthands for which types should actually be accepted
+  @any %{}
+  @json %{ accept: %{ json: true } }
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule.
@@ -22,7 +21,18 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
-  match _ do
+  # Match for the login service
+  match "/sessions/*path", @any do
+    Proxy.forward conn, path, "http://login/sessions/"
+  end
+
+  # Match for the mocklogin service
+  match "/mock/sessions/*path", @any do
+    Proxy.forward conn, path, "http://mocklogin/sessions/"
+  end
+
+  # Last call, nothing found...
+  match "_", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
 

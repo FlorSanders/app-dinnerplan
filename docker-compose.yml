@@ -36,3 +36,7 @@ services:
       - virtuoso:database
     volumes:
       - ./config/resources:/config
+  login:
+    image: semtech/mu-login-service:2.9.0
+    links:
+      - virtuoso:database
