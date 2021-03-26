@@ -21,12 +21,17 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
-  # Match for the login service
+  # Match for the user registration service
+  match "/accounts/*path", @any do
+    Proxy.forward conn, path, "http://registration/accounts/"
+  end
+
+  # Match for the user login service
   match "/sessions/*path", @any do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
-  # Match for the mocklogin service
+  # Match for the development mocklogin service
   match "/mock/sessions/*path", @any do
     Proxy.forward conn, path, "http://mocklogin/sessions/"
   end
