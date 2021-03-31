@@ -22,7 +22,7 @@ defmodule Dispatcher do
   # end
 
   # Match for the user registration service
-  match "/accounts/*path", @any do
+  match "/register/*path", @any do
     Proxy.forward conn, path, "http://registration/accounts/"
   end
 
@@ -36,8 +36,18 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://mocklogin/sessions/"
   end
 
+  # Get account information
+  get "/accounts/*path", @any do
+    forward conn, path, "http://resource/accounts/"
+  end
+
+  # Get user information
+  get "/users/*path", @any do
+    forward conn, path, "http://resource/users/"
+  end
+
   # Last call, nothing found...
-  match "_", %{ last_call: true } do
+  match "*_path", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
 

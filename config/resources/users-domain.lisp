@@ -1,0 +1,16 @@
+(define-resource user ()
+  :class (s-prefix "foaf:Person")
+  :properties `((:name :string ,(s-prefix "foaf:name")))
+  :has-many `((account :via ,(s-prefix "foaf:account")
+                       :as "accounts"))
+  :resource-base (s-url "http://mu.semte.ch/services/registration-service/users/")
+  :on-path "users")
+
+(define-resource account ()
+  :class (s-prefix "foaf:OnlineAccount")
+  :properties `((:name :string ,(s-prefix "foaf:accountName")))
+  :has-one `((user :via ,(s-prefix "foaf:account")
+                     :inverse t
+                     :as "owner"))
+  :resource-base (s-url "http://mu.semte.ch/services/registration-service/accounts/")
+  :on-path "accounts")
