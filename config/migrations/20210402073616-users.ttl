@@ -1,0 +1,47 @@
+# Ontologies
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix mu: <http://mu.semte.ch/vocabularies/core/>.
+@prefix account: <http://mu.semte.ch/vocabularies/account/>.
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+# Application graphs
+@base <http://mu.semte.ch/graphs/application>.
+@prefix users: <http://mu.semte.ch/services/registration-service/users/>.
+@prefix accounts: <http://mu.semte.ch/services/registration-service/accounts/>.
+
+# User 1: Flor Sanders
+users:605e0bd091e774000d000000 rdf:type foaf:Person;
+    mu:uuid "605e0bd091e774000d000000";
+    foaf:name "Flor Sanders";
+    dcterms:created "2021-03-26T16:29:04Z"^^xsd:dateTime;
+    dcterms:modified "2021-03-26T16:29:04Z"^^xsd:dateTime;
+    foaf:account accounts:605e0bd091e774000d000001.
+
+accounts:605e0bd091e774000d000001 rdf:type foaf:onlineAccount;
+    mu:uuid "605e0bd091e774000d000001";
+    account:status <http://mu.semte.ch/vocabularies/account/status/active>;
+    foaf:accountName "redsduty";
+    account:password "$2a$10$ZJr2IUeUeMtnlNCoKwCQZud1MheFQ88ZI5dEBkl4wIFYWVDANOW6i";    #p8ssw0rd
+    account:salt "376567bbcb774c6767122339665f56cd";
+    dcterms:created "2021-03-26T16:29:04Z"^^xsd:dateTime;
+    dcterms:modified "2021-03-26T16:29:04Z"^^xsd:dateTime.
+
+# User 2: John Doe
+users:60647891e49cc7000f000000 rdf:type foaf:Person;
+    mu:uuid "60647891e49cc7000f000000";
+    foaf:name "John Doe";
+    dcterms:created "2021-03-31T13:26:41Z"^^xsd:dateTime;
+    dcterms:modified "2021-03-31T13:26:41Z"^^xsd:dateTime;
+    foaf:account accounts:60647891e49cc7000f000001.
+
+accounts:60647891e49cc7000f000001 rdf:type foaf:onlineAccount;
+    mu:uuid "60647891e49cc7000f000001";
+    account:status <http://mu.semte.ch/vocabularies/account/status/active>;
+    foaf:accountName "johndoe";
+    account:password "$2a$10$ov18sBLpUSfTrJL10rKev.QYodivuOd7sbYQPYnbLDAPhlz0CRyWq";    #azerty123
+    account:salt "227873c9d9c345942a7637fff76d8100";
+    dcterms:created "2021-03-31T13:26:41Z"^^xsd:dateTime;
+    dcterms:modified "2021-03-31T13:26:41Z"^^xsd:dateTime.
