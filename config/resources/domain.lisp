@@ -26,5 +26,6 @@
 ;;   :on-path "<url-path-on-which-this-resource-is-available>")
 
 (read-domain-file "users-domain.lisp")
+(read-domain-file "recipes-domain.lisp")
 
 ;; Example

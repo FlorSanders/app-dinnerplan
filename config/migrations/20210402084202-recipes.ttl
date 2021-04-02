@@ -1,0 +1,43 @@
+# Ontologies
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix mu: <http://mu.semte.ch/vocabularies/core/>.
+@prefix account: <http://mu.semte.ch/vocabularies/account/>.
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+# Application graphs
+@prefix recipes: <http://mu.semte.ch/graphs/application/recipes/>.
+@prefix instructions: <http://mu.semte.ch/graphs/application/recipes/instructions/>.
+@prefix users: <http://mu.semte.ch/services/registration-service/users/>.
+@prefix accounts: <http://mu.semte.ch/services/registration-service/accounts/>.
+
+# Based on https://www.allrecipes.com/recipe/20334/banana-pancakes-i/
+recipes:605e0bd091e774000d100000 rdf:type schema:Recipe;
+    mu:uuid "605e0bd091e774000d100000";
+    schema:name "Banana pancakes";
+    schema:abstract "Pancakes with bananas, just how they should be.";
+    schema:cookTime "P0Y0M0DT0H30M0S"; # This uses the ISO 8601 duration format
+    schema:recipeCategory "Breakfast";
+    schema:recipeCuisine "American";
+    schema:recipeYield "6";
+    schema:suitableForDiet schema:VegetarianDiet;
+    schema:recipeIngredient "1 cup all-purpose flour";
+    schema:recipeIngredient "1 tablespoon white sugar";
+    schema:recipeIngredient "2 teaspoons baking powder";
+    schema:recipeIngredient "1 egg, beaten";
+    schema:recipeIngredient "1 cup milk";
+    schema:recipeIngredient "3 tablespoons butter, melted";
+    schema:recipeIngredient "2 bananas, mashed";
+    schema:creator users:605e0bd091e774000d000000;
+    schema:recipeInstructions instructions:605e0bd091e774000d110000.
+
+# Ordering of the elements should be taken care of by using listItems, but I'm not in the mood to make a bunch of blank nodes
+instructions:605e0bd091e774000d110000 rdf:type schema:ItemList;
+    mu:uuid "605e0bd091e774000d110000";
+    schema:itemListElement "1. Combine flour, sugar and baking powder.";
+    schema:itemListElement "2. Mix together the egg, milk, butter and bananas.";
+    schema:itemListElement "3. Add both mixtures together and stir until uniform.";
+    schema:itemListElement "4. Heat a lightly oiled griddle and cook the pancakes on both sides.".

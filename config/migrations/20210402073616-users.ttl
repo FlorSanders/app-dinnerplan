@@ -20,7 +20,7 @@ users:605e0bd091e774000d000000 rdf:type foaf:Person;
     dcterms:modified "2021-03-26T16:29:04Z"^^xsd:dateTime;
     foaf:account accounts:605e0bd091e774000d000001.
 
-accounts:605e0bd091e774000d000001 rdf:type foaf:onlineAccount;
+accounts:605e0bd091e774000d000001 rdf:type foaf:OnlineAccount;
     mu:uuid "605e0bd091e774000d000001";
     account:status <http://mu.semte.ch/vocabularies/account/status/active>;
     foaf:accountName "redsduty";
@@ -37,7 +37,7 @@ users:60647891e49cc7000f000000 rdf:type foaf:Person;
     dcterms:modified "2021-03-31T13:26:41Z"^^xsd:dateTime;
     foaf:account accounts:60647891e49cc7000f000001.
 
-accounts:60647891e49cc7000f000001 rdf:type foaf:onlineAccount;
+accounts:60647891e49cc7000f000001 rdf:type foaf:OnlineAccount;
     mu:uuid "60647891e49cc7000f000001";
     account:status <http://mu.semte.ch/vocabularies/account/status/active>;
     foaf:accountName "johndoe";

@@ -46,6 +46,16 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/users/"
   end
 
+  # Match recipes path
+  match "/recipes/*path", @any do
+    forward conn, path, "http://resource/recipes/"
+  end
+
+  # Match instructions path
+  match "/instructions/*path", @any do
+    forward conn, path, "http://resource/instructions/"
+  end
+
   # Last call, nothing found...
   match "*_path", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )

@@ -2,10 +2,10 @@
     :class (s-prefix "foaf:Person")
     :properties `((:name :string ,(s-prefix "foaf:name")))
     :has-many `((account :via ,(s-prefix "foaf:account")
-                      :as "accounts")
-            ;   (recipe :via ,(s-prefix "schema:creator")
-            ;           :inverst t
-            ;           :as "recipes"))
+                        :as "accounts")
+                (recipe :via ,(s-prefix "schema:creator")
+                        :inverse t
+                        :as "recipes"))
     :resource-base (s-url "http://mu.semte.ch/services/registration-service/users/")
     :on-path "users")
 
