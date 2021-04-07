@@ -19,3 +19,6 @@
 (add-prefix "dc" "http://purl.org/dc/elements/1.1/")
 (add-prefix "schema" "http://schema.org/")
 (add-prefix "ext" "http://mu.semte.ch/vocabularies/ext/")
+(add-prefix "nfo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#")
+(add-prefix "nie" "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#")
+(add-prefix "dbpedia" "http://dbpedia.org/ontology/")

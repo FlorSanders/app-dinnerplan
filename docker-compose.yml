@@ -36,6 +36,12 @@ services:
       - virtuoso:database
     volumes:
       - ./config/resources:/config
+  file:
+    image: semtech/mu-file-service:3.2.0
+    links:
+      - database:database
+    volumes:
+      - ./data/files:/share
   registration:
     image: semtech/mu-registration-service:2.6.0
     links:

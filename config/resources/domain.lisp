@@ -27,5 +27,6 @@
 
 (read-domain-file "users-domain.lisp")
 (read-domain-file "recipes-domain.lisp")
+(read-domain-file "files-domain.lisp")
 
 ;; Example

@@ -36,24 +36,29 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://mocklogin/sessions/"
   end
 
-  # Get account information
+  # Get account information from the resource service
   get "/accounts/*path", @any do
     forward conn, path, "http://resource/accounts/"
   end
 
-  # Get user information
+  # Get user information from the resource service
   get "/users/*path", @any do
     forward conn, path, "http://resource/users/"
   end
 
-  # Match recipes path
+  # Match recipes path for the resource service
   match "/recipes/*path", @any do
     forward conn, path, "http://resource/recipes/"
   end
 
-  # Match instructions path
+  # Match instructions path for the resource service
   match "/instructions/*path", @any do
     forward conn, path, "http://resource/instructions/"
+  end
+
+  # Match instructions path for the file service
+  match "/files/*path", @any do
+    forward conn, path, "http://file/files/"
   end
 
   # Last call, nothing found...
