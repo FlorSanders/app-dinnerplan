@@ -12,7 +12,7 @@
                        :as "creator")
                 (instructions :via ,(s-prefix "schema:recipeInstructions")
                             :as "instructions"))
-    :resource-base (s-url "http://mu.semte.ch/application/recipes/")
+    :resource-base (s-url "http://mu.semte.ch/graphs/recipes/")
     :on-path "recipes")
 
 (define-resource instructions ()
@@ -21,6 +21,6 @@
     :has-one `((recipe :via ,(s-prefix "schema:recipeInstructions")
                         :inverse t
                         :as "recipe"))
-    :resource-base (s-url "http://mu.semte.ch/application/recipes/instructions/")
+    :resource-base (s-url "http://mu.semte.ch/graphs/recipes/instructions/")
     :on-path "instructions")
 

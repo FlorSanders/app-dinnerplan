@@ -24,20 +24,29 @@ recipes:605e0bd091e774000d100000 rdf:type schema:Recipe;
     schema:recipeCuisine "American";
     schema:recipeYield "6";
     schema:suitableForDiet schema:VegetarianDiet;
-    schema:recipeIngredient "1 cup all-purpose flour";
-    schema:recipeIngredient "1 tablespoon white sugar";
-    schema:recipeIngredient "2 teaspoons baking powder";
-    schema:recipeIngredient "1 egg, beaten";
-    schema:recipeIngredient "1 cup milk";
-    schema:recipeIngredient "3 tablespoons butter, melted";
-    schema:recipeIngredient "2 bananas, mashed";
+    schema:recipeIngredient "[\"1 cup all-purpose flour\",\"1 tablespoon white sugar\",\"2 teaspoons baking powder\",\"1 egg, beaten\",\"1 cup milk\",\"3 tablespoons butter, melted\",\"2 bananas, mashed\"]";
     schema:creator users:605e0bd091e774000d000000;
     schema:recipeInstructions instructions:605e0bd091e774000d110000.
 
 # Ordering of the elements should be taken care of by using listItems, but I'm not in the mood to make a bunch of blank nodes
 instructions:605e0bd091e774000d110000 rdf:type schema:ItemList;
     mu:uuid "605e0bd091e774000d110000";
-    schema:itemListElement "1. Combine flour, sugar and baking powder.";
-    schema:itemListElement "2. Mix together the egg, milk, butter and bananas.";
-    schema:itemListElement "3. Add both mixtures together and stir until uniform.";
-    schema:itemListElement "4. Heat a lightly oiled griddle and cook the pancakes on both sides.".
+    schema:itemListElement "[\"Combine flour, sugar and baking powder.\",\"Mix together the egg, milk, butter and bananas.\",\"Add both mixtures together and stir until uniform.\",\"Heat a lightly oiled griddle and cook the pancakes on both sides.\"]".
+
+# Based on https://www.allrecipes.com/recipe/20334/banana-pancakes-i/
+recipes:606DB6E79B3BEC0009000002 rdf:type schema:Recipe;
+    mu:uuid "606DB6E79B3BEC0009000002";
+    schema:name "5-Ingredient Chili";
+    schema:abstract "No one will ever guess that this delicious chili was made with just 5 ingredients!";
+    schema:cookTime "P0Y0M0DT0H30M0S"; # This uses the ISO 8601 duration format
+    schema:recipeCategory "Dinner";
+    schema:recipeCuisine "Mexican";
+    schema:recipeYield "5";
+    schema:recipeIngredient "[\"1 lb. ground beef\",\"1 small white onion, diced\",\"3 (15 oz.) cans diced tomatoes with green chiles\",\"2 (15 oz.) cans beans, drained (black beans, kidney beans, a combo, or whatever you like)\",\"2 Tbsp. chili powder\"]";
+    schema:creator users:605e0bd091e774000d000000;
+    schema:recipeInstructions instructions:606DB6E79B3BEC0009000001.
+
+# Ordering of the elements should be taken care of by using listItems, but I'm not in the mood to make a bunch of blank nodes
+instructions:606DB6E79B3BEC0009000001 rdf:type schema:ItemList;
+    mu:uuid "606DB6E79B3BEC0009000001";
+    schema:itemListElement "[\"0. In a large stockpot, cook ground beef or turkey over medium-high heat until browned, stirring frequently.  Using a slotted spoon, transfer the cooked beef or turkey to a separate plate and set aside.  Reserve 1 tablespoon of grease in the stockpot, and discard the rest.\",\"1. Add the onion to the stockpot and saute for 4-5 minutes, or until soft.\",\"2. Add remaining ingredients and the cooked beef or turkey to the stockpot, and stir to combine. Bring to a boil, then reduce heat to medium-low, cover, and simmer for 10 minutes.\",\"3. Serve immediately, garnished with optional toppings if desired.  Or, store in a sealed container for up to 3 days.\"]".
