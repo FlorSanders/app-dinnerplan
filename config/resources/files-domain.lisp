@@ -8,6 +8,6 @@
   :has-one `((file :via ,(s-prefix "nie:dataSource")
                    :inverse t
                    :as "download"))
-  :resource-base (s-url "http://data.example.com/files/")
+  :resource-base (s-url "http://mu.semte.ch/services/file-service/files/")
   :features `(include-uri)
   :on-path "files")
