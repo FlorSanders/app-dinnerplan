@@ -39,7 +39,7 @@ services:
   file:
     image: semtech/mu-file-service:3.2.0
     links:
-      - database:database
+      - virtuoso:database
     volumes:
       - ./data/files:/share
   registration:
