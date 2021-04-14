@@ -1,6 +1,6 @@
 # Dinner Plan - Backend
 
-Simple (example) web application to digitize your recipes.
+Backend to support the [DinnerPlan frontend](https://github.com/FlorSanders/frontend-dinnerplan) webapp.
 The stack is built starting from [mu-project](https://github.com/mu-semtech/mu-project).
 
 ## Prerequisites
